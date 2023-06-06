@@ -46,8 +46,6 @@ This project is a Live Football World Cup Scoreboard application that displays o
 
    This will start the development server and open the application in your default browser.
 
-2. Customize the Scoreboard component in `src/Scoreboard.tsx` to meet your specific requirements.
-
 ### Build
 
 To build the project for production, run the following command:
