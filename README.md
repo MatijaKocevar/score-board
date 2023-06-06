@@ -20,15 +20,14 @@ This project is a Live Football World Cup Scoreboard application that displays o
 
 ### Prerequisites
 
-- Node.js (version X.X.X)
-- npm (version X.X.X) or Yarn (version X.X.X)
+- Node.js (16+)
 
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone <https://github.com/MatijaKocevar/score-board.git>
+   git clone https://github.com/MatijaKocevar/score-board.git
    ```
 
 2. Install dependencies:
