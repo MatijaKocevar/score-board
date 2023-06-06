@@ -8,4 +8,22 @@
     font-size: 2rem;
     font-weight: 700;
   }
+
+  .score-board__inputs {
+    display: flex;
+    gap: 1rem;
+
+    .home-team__name,
+    .away-team__name {
+      width: 10rem;
+    }
+
+    .home-team__score,
+    .away-team__score {
+      width: 2rem;
+    }
+  }
+
+  .score-board__actions {
+  }
 }
