@@ -1,0 +1,11 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .score-board__title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
