@@ -1,0 +1,29 @@
+.score-board__inputs {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 0.625rem;
+
+	input {
+		padding: 0.3125rem;
+		border: 0.0625rem solid #ccc;
+		border-radius: 0.3125rem;
+	}
+
+	.score-board__actions {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.new-game__button {
+	padding: 0.3125rem 0.625rem;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 0.3125rem;
+	cursor: pointer;
+}
+.new-game__button:hover {
+	background-color: #0069d9;
+}

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./ScoreBoardStyle.scss";
+import { expectedGamesOrder, gamesOrderToEnter } from "./test/ScoreBoardTestData";
 
 export interface Game {
 	homeTeam?: string;
@@ -102,6 +103,9 @@ const ScoreBoard: React.FC<Game> = (game: Game) => {
 			{games?.map((game, i) => {
 				return (
 					<div className='game-wrapper' key={"game-wrapper" + i}>
+						<button className='finish-match__button' onClick={() => handleFinishMatch(i)}>
+							Finish
+						</button>
 						<div id={"game" + i} className='game' key={"game" + i}>
 							<div id='home-team__name' className='home-team__name'>
 								{game.homeTeam}
@@ -110,16 +114,13 @@ const ScoreBoard: React.FC<Game> = (game: Game) => {
 								{game.homeScore}
 							</div>
 							<div> - </div>
-							<div id='away-team__score' className='away-team__score'>
-								{game.awayScore}
-							</div>
 							<div id='away-team__name' className='away-team__name'>
 								{game.awayTeam}
 							</div>
+							<div id='away-team__score' className='away-team__score'>
+								{game.awayScore}
+							</div>
 						</div>
-						<button className='finish-match__button' onClick={() => handleFinishMatch(i)}>
-							Finish
-						</button>
 					</div>
 				);
 			})}

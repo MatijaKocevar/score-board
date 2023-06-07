@@ -1,31 +1,56 @@
 .scores-wrapper {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	gap: 1rem;
+	overflow: auto;
+	height: calc(100vh - 14vh);
+	width: fit-content;
+	margin: 0 auto;
+	margin-top: 1.25rem;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	.game-wrapper {
+		display: flex;
+		align-items: center;
+		// justify-content: space-between;
+		margin-bottom: 0.625rem;
+	}
 
 	.game {
 		display: flex;
-		flex-direction: row;
-		background-color: lightgray;
+		align-items: center;
+		justify-content: center;
+		padding: 0.3125rem;
+		border-radius: 0.3125rem;
+		border: 0.0625rem solid #ccc;
+	}
 
-		.home-team__name,
-		.away-team__name {
-			width: 10rem;
-			// padding: 0 1rem;
-		}
+	.home-team__score,
+	.away-team__score {
+		margin: 0 0.3125rem;
+		font-weight: bold;
+		width: 1rem;
+	}
 
-		.home-team__score,
-		.away-team__score {
-			width: 2rem;
-			// padding: 0 0.5rem;
-		}
+	.home-team__name,
+	.away-team__name {
+		margin-left: 0.3125rem;
+		font-weight: bold;
+	}
 
-		.finish-match__button {
-			margin-left: 1rem;
-			width: 5rem;
-		}
+	.finish-match__button {
+		margin-right: 1rem;
+		padding: 0.3125rem 0.625rem;
+		background-color: #dc3545;
+		color: #fff;
+		border: none;
+		border-radius: 0.3125rem;
+		cursor: pointer;
+	}
+
+	.finish-match__button:hover {
+		background-color: #c82333;
 	}
 }

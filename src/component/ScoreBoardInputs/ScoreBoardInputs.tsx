@@ -1,5 +1,5 @@
 import { FC, useCallback, useState } from "react";
-import { Game } from "../ScoreBoard";
+import { Game } from "../ScoreBoard/ScoreBoard";
 import "./ScoreBoardInputsStyle.scss";
 
 interface ScoreBoardInputProps {
@@ -62,20 +62,20 @@ const ScoreBoardInputs: FC<ScoreBoardInputProps> = ({ setGame }) => {
 				/>
 				<div> - </div>
 				<input
-					id='away-team__score-input'
-					className='away-team__score'
-					name='awayScore'
-					placeholder='0'
-					value={gameInputs?.awayScore ?? ""}
-					onChange={handleScoreInputChange}
-				/>
-				<input
 					id='away-team__name-input'
 					className='away-team__name'
 					name='awayTeam'
 					value={gameInputs?.awayTeam ?? ""}
 					placeholder='Away Team'
 					onChange={handleNameInputChange}
+				/>
+				<input
+					id='away-team__score-input'
+					className='away-team__score'
+					name='awayScore'
+					placeholder='0'
+					value={gameInputs?.awayScore ?? ""}
+					onChange={handleScoreInputChange}
 				/>
 			</div>
 			<div className='score-board__actions'>
