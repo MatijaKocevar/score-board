@@ -7,13 +7,11 @@ function App() {
 	const [game, setGame] = useState<Game>();
 
 	return (
-		<>
-			<div className='score-board__wrapper'>
-				<div className='score-board__title'>Score Board</div>
-				<ScoreBoardInputs setGame={setGame} />
-			</div>
+		<div className='app-container'>
+			<h1 style={{ textAlign: "center" }}>Score Board</h1>
+			<ScoreBoardInputs setGame={setGame} />
 			<ScoreBoard {...game} />
-		</>
+		</div>
 	);
 }
 
