@@ -1,27 +1,12 @@
 .score-board__wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
-  .score-board__title {
-    font-size: 2rem;
-    font-weight: 700;
-    padding-bottom: 1rem;
-  }
-
-  .score-board__inputs {
-    display: flex;
-    gap: 1rem;
-
-    .home-team__name,
-    .away-team__name {
-      width: 10rem;
-    }
-
-    .home-team__score,
-    .away-team__score {
-      width: 2rem;
-    }
-  }
+	.score-board__title {
+		font-size: 2rem;
+		font-weight: 700;
+		padding-bottom: 1rem;
+	}
 }
