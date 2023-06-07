@@ -13,6 +13,7 @@ function App() {
 				<ScoreBoardInputs setGame={setGame} />
 			</div>
 			<ScoreBoard {...game} />
+			<p></p>
 		</>
 	);
 }
