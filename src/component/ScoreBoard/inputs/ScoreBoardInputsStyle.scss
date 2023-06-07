@@ -1,6 +1,6 @@
 .score-board__inputs {
 	display: flex;
-	gap: 1rem;
+	margin-bottom: 1rem;
 
 	.home-team__name,
 	.away-team__name {
@@ -12,16 +12,8 @@
 		width: 2rem;
 	}
 }
-
 .score-board__actions {
-	display: flex;
-	gap: 1rem;
-
 	.new-game__button {
-		width: 10rem;
-	}
-
-	.finish-game__button {
 		width: 10rem;
 	}
 }

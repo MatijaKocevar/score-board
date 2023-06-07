@@ -1,27 +1,31 @@
 .scores-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 1rem;
 
-  .game {
-    display: flex;
-    flex-direction: row;
-    background-color: lightgray;
-    margin-bottom: 0.5rem;
+	.game {
+		display: flex;
+		flex-direction: row;
+		background-color: lightgray;
 
-    .home-team__name,
-    .away-team__name {
-      width: 10rem;
-      // padding: 0 1rem;
-    }
+		.home-team__name,
+		.away-team__name {
+			width: 10rem;
+			// padding: 0 1rem;
+		}
 
-    .home-team__score,
-    .away-team__score {
-      width: 2rem;
-      // padding: 0 0.5rem;
-    }
-  }
+		.home-team__score,
+		.away-team__score {
+			width: 2rem;
+			// padding: 0 0.5rem;
+		}
+
+		.finish-match__button {
+			margin-left: 1rem;
+			width: 5rem;
+		}
+	}
 }

@@ -10,6 +10,7 @@ const ScoreBoardInputs: FC<ScoreBoardInputProps> = ({ setGame }) => {
 	const [gameInputs, setGameInputs] = useState<Game>();
 
 	const handleNewUpdateGame = useCallback(() => {
+		// Set the game state with the input values
 		setGame({
 			homeTeam: gameInputs?.homeTeam,
 			homeScore: gameInputs?.homeScore,
@@ -18,10 +19,24 @@ const ScoreBoardInputs: FC<ScoreBoardInputProps> = ({ setGame }) => {
 		});
 	}, [gameInputs, setGame]);
 
-	const handleInputChange = useCallback(
+	const handleNameInputChange = useCallback(
 		(event: React.ChangeEvent<HTMLInputElement>) => {
 			const { name, value } = event.target;
+			// Update the specific input value in the gameInputs state
 			setGameInputs((prevGame) => ({ ...prevGame, [name]: value }));
+		},
+		[setGameInputs]
+	);
+
+	const handleScoreInputChange = useCallback(
+		(event: React.ChangeEvent<HTMLInputElement>) => {
+			const { name, value } = event.target;
+
+			// Check if the input value is a valid integer
+			if (/^\d*$/.test(value)) {
+				// Update the specific input value in the gameInputs state
+				setGameInputs((prevGame) => ({ ...prevGame, [name]: value }));
+			}
 		},
 		[setGameInputs]
 	);
@@ -35,7 +50,7 @@ const ScoreBoardInputs: FC<ScoreBoardInputProps> = ({ setGame }) => {
 					name='homeTeam'
 					value={gameInputs?.homeTeam ?? ""}
 					placeholder='Home Team'
-					onChange={handleInputChange}
+					onChange={handleNameInputChange}
 				/>
 				<input
 					id='home-team__score-input'
@@ -43,7 +58,7 @@ const ScoreBoardInputs: FC<ScoreBoardInputProps> = ({ setGame }) => {
 					name='homeScore'
 					placeholder='0'
 					value={gameInputs?.homeScore ?? ""}
-					onChange={handleInputChange}
+					onChange={handleScoreInputChange}
 				/>
 				<div> - </div>
 				<input
@@ -52,7 +67,7 @@ const ScoreBoardInputs: FC<ScoreBoardInputProps> = ({ setGame }) => {
 					name='awayScore'
 					placeholder='0'
 					value={gameInputs?.awayScore ?? ""}
-					onChange={handleInputChange}
+					onChange={handleScoreInputChange}
 				/>
 				<input
 					id='away-team__name-input'
@@ -60,15 +75,13 @@ const ScoreBoardInputs: FC<ScoreBoardInputProps> = ({ setGame }) => {
 					name='awayTeam'
 					value={gameInputs?.awayTeam ?? ""}
 					placeholder='Away Team'
-					onChange={handleInputChange}
+					onChange={handleNameInputChange}
 				/>
 			</div>
-			<br />
 			<div className='score-board__actions'>
 				<button className='new-game__button' onClick={handleNewUpdateGame}>
 					New/Update Game
 				</button>
-				<button className='finish-game__button'>Finish game</button>
 			</div>
 		</>
 	);

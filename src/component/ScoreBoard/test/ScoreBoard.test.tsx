@@ -1,7 +1,7 @@
 import { fireEvent, render } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import App from "../../App";
-import { expectedGamesOrder, gamesOrderToEnter } from "../../utils/testData";
+import App from "../../../App";
+import { expectedGamesOrder, gamesOrderToEnter } from "./ScoreBoardTestData";
 
 describe("ScoreBoard", () => {
 	it("Checks if new game is rendered correctly", () => {
@@ -98,5 +98,29 @@ describe("ScoreBoard", () => {
 				}
 			});
 		});
+	});
+
+	it("deletes a game from the ScoreBoard", () => {
+		const { getByText, container, queryByText } = render(<App />);
+
+		// Enter new game values
+		const homeTeamInput = container.querySelector("#home-team__name-input");
+		const awayTeamInput = container.querySelector("#away-team__name-input");
+
+		// Enter a game to be deleted
+		if (homeTeamInput) fireEvent.change(homeTeamInput, { target: { value: "Team A" } });
+		if (awayTeamInput) fireEvent.change(awayTeamInput, { target: { value: "Team B" } });
+
+		// Click the "New Game" button
+		const newGameButton = getByText("New/Update Game");
+		fireEvent.click(newGameButton);
+
+		// Find and click the delete button for the added game
+		const deleteButton = getByText("Finish");
+		fireEvent.click(deleteButton);
+
+		// Verify that the deleted game is not displayed in the scoreboard
+		expect(queryByText("Team A")).not.toBeInTheDocument();
+		expect(queryByText("Team B")).not.toBeInTheDocument();
 	});
 });
