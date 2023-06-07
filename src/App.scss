@@ -1,15 +1,5 @@
-.score-board__wrapper {
-	width: 100%;
+.app-container {
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	font-family: Arial, sans-serif;
-	height: 12%;
-
-	.score-board__title {
-		font-size: 1.5rem;
-		font-weight: bold;
-		margin-bottom: 1.25rem;
-	}
 }

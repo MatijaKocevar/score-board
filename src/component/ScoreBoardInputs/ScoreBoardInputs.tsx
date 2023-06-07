@@ -43,49 +43,51 @@ const ScoreBoardInputs: FC<ScoreBoardInputProps> = ({ setGame }) => {
 
 	return (
 		<>
-			<div className='score-board__inputs'>
-				<div className='home-team__wrapper'>
-					<input
-						id='home-team__name-input'
-						className='home-team__name'
-						name='homeTeam'
-						value={gameInputs?.homeTeam ?? ""}
-						placeholder='Home Team'
-						onChange={handleNameInputChange}
-					/>
-					<input
-						id='home-team__score-input'
-						className='home-team__score'
-						name='homeScore'
-						placeholder='0'
-						value={gameInputs?.homeScore ?? ""}
-						onChange={handleScoreInputChange}
-					/>
+			<div className='score-board__inputs-wrapper'>
+				<div className='score-board__inputs'>
+					<div className='home-team__wrapper'>
+						<input
+							id='home-team__name-input'
+							className='home-team__name'
+							name='homeTeam'
+							value={gameInputs?.homeTeam ?? ""}
+							placeholder='Home Team'
+							onChange={handleNameInputChange}
+						/>
+						<input
+							id='home-team__score-input'
+							className='home-team__score'
+							name='homeScore'
+							placeholder='0'
+							value={gameInputs?.homeScore ?? ""}
+							onChange={handleScoreInputChange}
+						/>
+					</div>
+					<div> - </div>
+					<div className='away-team__wrapper'>
+						<input
+							id='away-team__name-input'
+							className='away-team__name'
+							name='awayTeam'
+							value={gameInputs?.awayTeam ?? ""}
+							placeholder='Away Team'
+							onChange={handleNameInputChange}
+						/>
+						<input
+							id='away-team__score-input'
+							className='away-team__score'
+							name='awayScore'
+							placeholder='0'
+							value={gameInputs?.awayScore ?? ""}
+							onChange={handleScoreInputChange}
+						/>
+					</div>
 				</div>
-				<div> - </div>
-				<div className='away-team__wrapper'>
-					<input
-						id='away-team__name-input'
-						className='away-team__name'
-						name='awayTeam'
-						value={gameInputs?.awayTeam ?? ""}
-						placeholder='Away Team'
-						onChange={handleNameInputChange}
-					/>
-					<input
-						id='away-team__score-input'
-						className='away-team__score'
-						name='awayScore'
-						placeholder='0'
-						value={gameInputs?.awayScore ?? ""}
-						onChange={handleScoreInputChange}
-					/>
+				<div className='score-board__actions'>
+					<button className='new-game__button' onClick={handleNewUpdateGame}>
+						New/Update Game
+					</button>
 				</div>
-			</div>
-			<div className='score-board__actions'>
-				<button className='new-game__button' onClick={handleNewUpdateGame}>
-					New/Update Game
-				</button>
 			</div>
 		</>
 	);

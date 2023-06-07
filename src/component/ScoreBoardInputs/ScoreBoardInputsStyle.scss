@@ -1,52 +1,66 @@
-.score-board__inputs {
+.score-board__inputs-wrapper {
+	width: 100%;
 	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 	align-items: center;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 0.625rem;
+	font-family: Arial, sans-serif;
+	height: calc(15%);
+	margin-bottom: 1rem;
 
-	.home-team__wrapper,
-	.away-team__wrapper {
+	.score-board__inputs {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		margin: 0 0.625rem;
-	}
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 0.625rem;
 
-	input {
-		padding: 0.3125rem;
-		border: 0.0625rem solid #ccc;
-		border-radius: 0.3125rem;
-	}
+		.home-team__wrapper,
+		.away-team__wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 0 0.625rem;
+		}
 
+		input {
+			padding: 0.3125rem;
+			border: 0.0625rem solid #ccc;
+			border-radius: 0.3125rem;
+		}
+	}
 	.score-board__actions {
 		display: flex;
 		justify-content: center;
 	}
-}
 
-.new-game__button {
-	padding: 0.3125rem 0.625rem;
-	background-color: #007bff;
-	color: #fff;
-	border: none;
-	border-radius: 0.3125rem;
-	cursor: pointer;
-}
-.new-game__button:hover {
-	background-color: #0069d9;
+	.new-game__button {
+		padding: 0.3125rem 0.625rem;
+		background-color: #007bff;
+		color: #fff;
+		border: none;
+		border-radius: 0.3125rem;
+		cursor: pointer;
+	}
+	.new-game__button:hover {
+		background-color: #0069d9;
+	}
 }
 
 //lg
-@media (min-width: 992px) {
+@media (min-width: 500px) {
 	.score-board__inputs {
 		flex-direction: row;
 	}
 }
 
 //sm
-@media (max-width: 768px) {
-	.score-board__inputs {
-		flex-direction: column;
+@media (max-width: 500px) {
+	.score-board__inputs-wrapper {
+		height: 30%;
+
+		.score-board__inputs {
+			flex-direction: column;
+		}
 	}
 }
