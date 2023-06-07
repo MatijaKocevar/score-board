@@ -8,6 +8,7 @@ This project is a Live Football World Cup Scoreboard application that displays o
 - Update the score of a game.
 - Finish a game in progress.
 - Get a summary of ongoing games ordered by their total score.
+- If some of the input values are blank, the application will not create/update the game.
 
 ## Technologies Used
 
@@ -15,6 +16,7 @@ This project is a Live Football World Cup Scoreboard application that displays o
 - TypeScript
 - Vite
 - Sass
+- Jest
 
 ## Getting Started
 
