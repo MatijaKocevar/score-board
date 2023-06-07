@@ -15,14 +15,10 @@ const sortGames = (games: Game[]) => {
 		const totalScoreB = Number(b.homeScore) + Number(b.awayScore);
 
 		// Compare the total scores
-		if (totalScoreB !== totalScoreA) {
-			return totalScoreB - totalScoreA; // Sort by total score in descending order
-		}
+		if (totalScoreB !== totalScoreA) return totalScoreB - totalScoreA; // Sort by total score in descending order
 
 		// If the total scores are the same, compare the creation dates
-		if (a.createdAt && b.createdAt) {
-			return b.createdAt.getTime() - a.createdAt.getTime(); // Sort by creation date in descending order
-		}
+		if (a.createdAt && b.createdAt) return b.createdAt.getTime() - a.createdAt.getTime(); // Sort by creation date in descending order
 
 		return 0;
 	});
