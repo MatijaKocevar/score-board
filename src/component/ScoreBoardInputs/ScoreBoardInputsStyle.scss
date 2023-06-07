@@ -1,8 +1,17 @@
 .score-board__inputs {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
+	align-items: center;
 	margin-bottom: 0.625rem;
+
+	.home-team__wrapper,
+	.away-team__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0 0.625rem;
+	}
 
 	input {
 		padding: 0.3125rem;
@@ -26,4 +35,18 @@
 }
 .new-game__button:hover {
 	background-color: #0069d9;
+}
+
+//lg
+@media (min-width: 992px) {
+	.score-board__inputs {
+		flex-direction: row;
+	}
+}
+
+//sm
+@media (max-width: 768px) {
+	.score-board__inputs {
+		flex-direction: column;
+	}
 }

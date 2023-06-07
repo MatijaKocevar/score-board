@@ -7,14 +7,13 @@ function App() {
 	const [game, setGame] = useState<Game>();
 
 	return (
-		<>
+		<div>
 			<div className='score-board__wrapper'>
 				<div className='score-board__title'>Score Board</div>
 				<ScoreBoardInputs setGame={setGame} />
 			</div>
 			<ScoreBoard {...game} />
-			<p></p>
-		</>
+		</div>
 	);
 }
 
