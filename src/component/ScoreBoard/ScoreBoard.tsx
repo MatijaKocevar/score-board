@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./ScoreBoardStyle.scss";
-import { expectedGamesOrder, gamesOrderToEnter } from "./test/ScoreBoardTestData";
-
 export interface Game {
 	homeTeam?: string;
 	homeScore?: string;
