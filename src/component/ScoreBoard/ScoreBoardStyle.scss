@@ -9,6 +9,8 @@
   .game {
     display: flex;
     flex-direction: row;
+    background-color: lightgray;
+    margin-bottom: 0.5rem;
 
     .home-team__name,
     .away-team__name {
