@@ -7,6 +7,7 @@
   .score-board__title {
     font-size: 2rem;
     font-weight: 700;
+    padding-bottom: 1rem;
   }
 
   .score-board__inputs {
@@ -22,8 +23,5 @@
     .away-team__score {
       width: 2rem;
     }
-  }
-
-  .score-board__actions {
   }
 }

@@ -1,37 +1,70 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./ScoreBoardStyle.scss";
+import { sortGames } from "../../utils/utils";
+import { expectedGamesOrder } from "../../utils/testData";
 
 export interface Game {
-  homeTeam: string;
-  homeScore: string;
-  awayTeam: string;
-  awayScore: string;
+  homeTeam?: string;
+  homeScore?: string;
+  awayTeam?: string;
+  awayScore?: string;
+  createdAt?: Date;
 }
 
 const ScoreBoard: React.FC<Game> = (game: Game) => {
-  const [games, setGames] = React.useState<Game[]>([]);
+  const [games, setGames] = useState<Game[]>();
 
-  React.useEffect(() => {
-    setGames((g) => {
-      const gameDuplicate = g?.some(
-        (g) =>
-          g.homeTeam === game.homeTeam &&
-          g.awayTeam === game.awayTeam &&
-          g.homeScore === game.homeScore &&
-          g.awayScore === game.awayScore
-      );
+  useEffect(() => {
+    const isMissingProp =
+      game.awayTeam === "" ||
+      game.awayTeam === undefined ||
+      game.homeTeam === "" ||
+      game.homeTeam === undefined;
 
-      if (g && !gameDuplicate) {
-        return [...g, game];
-      }
+    const isGameDuplicate = games?.some(
+      (gamePrev) =>
+        gamePrev.homeTeam === game.homeTeam &&
+        gamePrev.awayTeam === game.awayTeam
+    );
 
-      return g;
-    });
+    if (isGameDuplicate) {
+      alert("Game already exists");
+    } else if (!isMissingProp) {
+      setGames((g) => {
+        if (g) {
+          const newGame: Game = {
+            homeTeam: game.homeTeam,
+            homeScore: game.homeScore ?? "0",
+            awayTeam: game.awayTeam,
+            awayScore: game.awayScore ?? "0",
+            createdAt: new Date(),
+          };
+
+          const newGames = [...g, newGame];
+          const sortedGames = sortGames(newGames);
+
+          return sortedGames;
+        } else {
+          return [game];
+        }
+      });
+    } else {
+      const isMissingHomeTeam =
+        game.homeTeam === "" || game.homeTeam === undefined;
+      const isMissingAwayTeam =
+        game.awayTeam === "" || game.awayTeam === undefined;
+
+      if (isMissingAwayTeam && !isMissingHomeTeam)
+        alert(`Missing team name: "Away"`);
+
+      if (isMissingHomeTeam && !isMissingAwayTeam)
+        alert(`Missing team name: "Home"`);
+    }
   }, [game]);
 
   return (
-    <div className="scores-wrapper">
-      {games.map((game, i) => {
+    <div id="scores-wrapper" className="scores-wrapper">
+      {games?.map((game, i) => {
         return (
           <div id={"game" + i} className="game" key={"game" + i}>
             <div id="home-team__name" className="home-team__name">
